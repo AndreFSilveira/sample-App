@@ -59,5 +59,9 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
+
+  def store_clear_location
+    session[:forwarding_url] = nil if session[:forwarding_url];
+  end
   
 end
